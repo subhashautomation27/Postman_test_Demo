@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "782d2c64-1908-4b9b-b9d1-184debc775e3",
+		"name": "subhash_collection1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27895057"
+	},
+	"item": [
+		{
+			"name": "Postrequest",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.variables.set(\"url_local\",\"https://reqres.in\");\r",
+							"\r",
+							"pm.globals.set(\"userid_global\",4); \r",
+							"\r",
+							"pm.environment.set(\"user_qa_env\",4);\r",
+							"pm.collectionVariables.set(\"user_collect22\",6);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(pm.globals.get(\"userid_global\"));\r",
+							"console.log(pm.environment.get(\"user_qa_env\"));\r",
+							"console.log(pm.collectionVariables.get(\"user_collect22\"));\r",
+							"console.log(pm.variables.get(\"url_local\"));\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.globals.unset(\"userid_global\"); \r",
+							"\r",
+							"pm.environment.unset(\"user_qa_env\");\r",
+							"\r",
+							"pm.collectionVariables.unset(\"user_collect1\");\r",
+							"\r",
+							"pm.collectionVariables.unset(\"user_collect22\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_local}}/api/users?page={{user_collect22}}",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{user_collect22}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Postrequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"subhash\",\r\n    \"job\": \"Tester\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutRequest",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"subhashchandraBose\",\r\n    \"job\": \"QA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/558",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"558"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteRequest",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/558",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"558"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
